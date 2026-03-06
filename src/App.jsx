@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import CustomCursor from './components/CustomCursor';
 import PageLoader from './components/PageLoader';
+import Navbar from './components/Navbar';
 import Hero from './components/Hero';
 import About from './components/About';
 import Projects from './components/Projects';
@@ -8,6 +9,7 @@ import Footer from './components/Footer';
 
 function App() {
   const [loading, setLoading] = useState(true);
+  const [navOpen, setNavOpen] = useState(false);
 
   useEffect(() => {
     // Scroll to top on refresh
@@ -20,8 +22,10 @@ function App() {
 
       {loading && <PageLoader onComplete={() => setLoading(false)} />}
 
+      <Navbar isOpen={navOpen} onClose={() => setNavOpen(false)} />
+
       <main className="bg-lush-dark min-h-screen">
-        <Hero />
+        <Hero onExploreClick={() => setNavOpen(true)} />
         <About />
         <Projects />
         <Footer />

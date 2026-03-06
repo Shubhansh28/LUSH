@@ -2,7 +2,7 @@ import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
 import MagneticButton from './MagneticButton';
 
-const Hero = () => {
+const Hero = ({ onExploreClick }) => {
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
         target: container,
@@ -30,6 +30,13 @@ const Hero = () => {
 
             {/* Hero Content */}
             <div className="relative z-20 flex flex-col items-center justify-center w-full px-4">
+                {/* Watermark Logo */}
+                <img
+                    src="/lush-logo.png?v=2"
+                    alt=""
+                    className="absolute top-2 left-2 md:top-4 md:left-4 h-20 md:h-28 w-auto opacity-50 pointer-events-none select-none"
+                    aria-hidden="true"
+                />
                 <motion.div
                     initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}
@@ -71,7 +78,7 @@ const Hero = () => {
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ duration: 0.8, delay: 1.6, ease: "easeOut" }}
                 >
-                    <MagneticButton className="text-white hover:text-white border-lush-gold/40 hover:border-lush-red">
+                    <MagneticButton onClick={onExploreClick} className="text-white hover:text-white border-lush-gold/40 hover:border-lush-red">
                         Explore Our Vision
                     </MagneticButton>
                 </motion.div>
