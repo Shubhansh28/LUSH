@@ -23,7 +23,7 @@ const Navbar = ({ isOpen, onClose }) => {
                     className="fixed top-0 left-0 w-full z-[100]"
                 >
                     {/* Glassmorphism background */}
-                    <div className="absolute inset-0 bg-lush-dark/80 backdrop-blur-2xl border-b border-white/5" />
+                    <div className="absolute inset-0 bg-white/80 backdrop-blur-2xl border-b border-lush-dark/5" />
 
                     <div className="relative flex items-center justify-between px-4 sm:px-6 md:px-12 py-4 md:py-6">
                         {/* Logo */}
@@ -53,7 +53,7 @@ const Navbar = ({ isOpen, onClose }) => {
                                         duration: 0.5,
                                         ease: [0.76, 0, 0.24, 1],
                                     }}
-                                    className="nav-link relative px-5 py-2 text-[13px] font-inter font-light uppercase tracking-[0.2em] text-lush-cream/60 hover:text-white transition-colors duration-300 group"
+                                    className="nav-link relative px-5 py-2 text-[13px] font-inter font-light uppercase tracking-[0.2em] text-lush-dark/60 hover:text-lush-dark transition-colors duration-300 group"
                                 >
                                     {item.label}
                                     {/* Animated underline */}
@@ -68,7 +68,7 @@ const Navbar = ({ isOpen, onClose }) => {
                             animate={{ opacity: 1, rotate: 0 }}
                             transition={{ delay: 0.4, duration: 0.5 }}
                             onClick={onClose}
-                            className="ml-4 sm:ml-6 w-12 h-12 flex items-center justify-center rounded-full border border-white/20 hover:border-lush-red/50 hover:bg-lush-red/10 transition-all duration-300 group"
+                            className="ml-4 sm:ml-6 w-12 h-12 flex items-center justify-center rounded-full border border-lush-dark/20 hover:border-lush-red/50 hover:bg-lush-red/10 transition-all duration-300 group"
                             aria-label="Close navigation"
                         >
                             <svg
@@ -76,7 +76,7 @@ const Navbar = ({ isOpen, onClose }) => {
                                 height="14"
                                 viewBox="0 0 14 14"
                                 fill="none"
-                                className="text-lush-cream/50 group-hover:text-white transition-colors duration-300"
+                                className="text-lush-dark/50 group-hover:text-lush-dark transition-colors duration-300"
                             >
                                 <line x1="1" y1="1" x2="13" y2="13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
                                 <line x1="13" y1="1" x2="1" y2="13" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" />
@@ -98,7 +98,7 @@ const Navbar = ({ isOpen, onClose }) => {
                                     duration: 0.5,
                                     ease: [0.76, 0, 0.24, 1],
                                 }}
-                                className="w-full text-center py-3 text-sm font-inter font-light uppercase tracking-[0.15em] text-lush-cream/60 hover:text-white transition-colors duration-300 border-b border-white/5 last:border-b-0"
+                                className="w-full text-center py-3 text-sm font-inter font-light uppercase tracking-[0.15em] text-lush-dark/60 hover:text-lush-dark transition-colors duration-300 border-b border-lush-dark/5 last:border-b-0"
                             >
                                 {item.label}
                             </motion.a>

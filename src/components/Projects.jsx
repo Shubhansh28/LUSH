@@ -7,28 +7,28 @@ const projectsData = [
         title: 'The Crimson Suite',
         category: 'Residential',
         image: 'https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-        color: '#1a0a0a'
+        color: '#fdf1f1'
     },
     {
         id: 2,
         title: 'Velvet Manor',
         category: 'Luxury Estate',
         image: 'https://images.unsplash.com/photo-1600607687939-ce8a6c25118c?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-        color: '#1c0505'
+        color: '#f9e8e8'
     },
     {
         id: 3,
         title: 'Noir Gallery',
         category: 'Cultural',
         image: 'https://images.unsplash.com/photo-1618221195710-dd6b41faaea6?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-        color: '#0d0d0d'
+        color: '#f5f5f5'
     },
     {
         id: 4,
         title: 'Opulence Tower',
         category: 'Corporate',
         image: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?ixlib=rb-4.0.3&auto=format&fit=crop&w=1200&q=80',
-        color: '#100808'
+        color: '#fafafa'
     }
 ];
 
@@ -41,19 +41,19 @@ const Projects = () => {
             animate={{ backgroundColor: activeColor }}
             style={{ backgroundColor: 'transparent' }}
         >
-            {activeColor === 'transparent' && <div className="absolute inset-0 bg-lush-dark -z-10" />}
+            {activeColor === 'transparent' && <div className="absolute inset-0 bg-white -z-10" />}
 
             <div className="max-w-7xl mx-auto">
                 <div className="flex flex-col md:flex-row justify-between items-start md:items-end mb-10 sm:mb-16">
                     <div>
-                        <h2 className="text-4xl sm:text-5xl md:text-7xl font-playfair font-bold text-white normal-case">
+                        <h2 className="text-4xl sm:text-5xl md:text-7xl font-playfair font-bold text-lush-dark normal-case">
                             Selected
                         </h2>
-                        <h2 className="font-script text-4xl sm:text-5xl md:text-7xl text-lush-gold normal-case -mt-2">
+                        <h2 className="font-script text-4xl sm:text-5xl md:text-7xl text-lush-red normal-case -mt-2">
                             Works
                         </h2>
                     </div>
-                    <p className="text-sm sm:text-base text-gray-400 max-w-sm mt-4 sm:mt-6 md:mt-0 font-inter font-light">
+                    <p className="text-sm sm:text-base text-gray-600 max-w-sm mt-4 sm:mt-6 md:mt-0 font-inter font-light">
                         A curated collection of our most defining interior design achievements across the globe.
                     </p>
                 </div>
@@ -86,12 +86,12 @@ const Projects = () => {
                                 </div>
                             </div>
 
-                            <div className="flex justify-between items-start text-white">
+                            <div className="flex justify-between items-start text-lush-dark">
                                 <div>
                                     <h4 className="text-xl sm:text-2xl font-playfair font-bold mb-2 group-hover:text-lush-red transition-colors duration-300 normal-case">
                                         {project.title}
                                     </h4>
-                                    <p className="text-sm font-inter text-gray-400 uppercase tracking-widest">
+                                    <p className="text-sm font-inter text-gray-600 uppercase tracking-widest">
                                         {project.category}
                                     </p>
                                 </div>

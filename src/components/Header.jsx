@@ -19,9 +19,9 @@ const Header = ({ onMenuClick }) => {
         <motion.header
             className="fixed top-0 left-0 w-full z-50 transition-all duration-300 pointer-events-none"
             style={{
-                backgroundColor: `rgba(10, 10, 10, ${bgOpacity.get()})`,
+                backgroundColor: `rgba(255, 255, 255, ${bgOpacity.get()})`,
                 backdropFilter: scrolled ? 'blur(12px)' : 'none',
-                borderBottom: `1px solid rgba(255, 255, 255, ${borderColorOpacity.get()})`
+                borderBottom: `1px solid rgba(0, 0, 0, ${borderColorOpacity.get()})`
             }}
         >
             <div className="flex items-center justify-between px-4 sm:px-6 md:px-12 py-4 md:py-6 pointer-events-auto">
@@ -37,12 +37,12 @@ const Header = ({ onMenuClick }) => {
                 {/* Hamburger Button */}
                 <button
                     onClick={onMenuClick}
-                    className="group flex items-center justify-center w-12 h-12 rounded-full border border-white/20 hover:border-lush-red/50 hover:bg-lush-red/10 transition-all duration-300 overflow-hidden"
+                    className="group flex items-center justify-center w-12 h-12 rounded-full border border-lush-dark/20 hover:border-lush-red/50 hover:bg-lush-red/10 transition-all duration-300 overflow-hidden"
                     aria-label="Open menu"
                 >
                     <div className="flex flex-col items-end gap-1.5 w-5">
-                        <span className="w-full h-[1.5px] bg-white group-hover:bg-lush-red transition-colors duration-300" />
-                        <span className="w-3/4 h-[1.5px] bg-white group-hover:w-full group-hover:bg-lush-red transition-all duration-300" />
+                        <span className="w-full h-[1.5px] bg-lush-dark group-hover:bg-lush-red transition-colors duration-300" />
+                        <span className="w-3/4 h-[1.5px] bg-lush-dark group-hover:w-full group-hover:bg-lush-red transition-all duration-300" />
                     </div>
                 </button>
             </div>

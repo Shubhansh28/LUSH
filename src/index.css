@@ -4,6 +4,10 @@
   --font-playfair: "Playfair Display", serif;
   --font-script: "Great Vibes", cursive;
   --font-inter: "Inter", sans-serif;
+  --font-cormorant: "Cormorant Garamond", serif;
+  --font-slight: "Slight", "Great Vibes", cursive;
+  --font-now: "NOW", "Inter", sans-serif;
+  --font-beyond: "Above the Beyond Script", "Playfair Display", serif;
 
   --color-lush-dark: #0a0a0a;
   --color-lush-red: #c0392b;
@@ -12,17 +16,13 @@
   /* Bright Red */
   --color-lush-red-dark: #8b1a1a;
   /* Dark Crimson */
-  --color-lush-gold: #d4a574;
-  /* Muted Gold */
-  --color-lush-cream: #fdf5ec;
-  /* Warm Cream */
 }
 
 @layer base {
 
   html,
   body {
-    @apply bg-lush-dark text-white font-inter;
+    @apply bg-white text-lush-dark font-inter;
     margin: 0;
     padding: 0;
     width: 100%;
@@ -49,11 +49,11 @@
 }
 
 ::-webkit-scrollbar-track {
-  background: #0a0a0a;
+  background: #ffffff;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #333;
+  background: #ccc;
   border-radius: 4px;
 }
 
@@ -63,10 +63,10 @@
 
 /* Glassmorphism Utility */
 .glass {
-  background: rgba(255, 255, 255, 0.03);
+  background: rgba(0, 0, 0, 0.03);
   backdrop-filter: blur(16px);
   -webkit-backdrop-filter: blur(16px);
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(0, 0, 0, 0.05);
 }
 
 /* Hide cursor fallback for touch devices */

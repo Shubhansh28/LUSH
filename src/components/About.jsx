@@ -15,7 +15,7 @@ const About = () => {
     const isInView = useInView(containerRef, { once: true, margin: "-10%" });
 
     return (
-        <section ref={containerRef} className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 lg:px-24 bg-lush-dark text-white relative z-30 overflow-hidden">
+        <section ref={containerRef} className="py-16 sm:py-24 md:py-32 px-4 sm:px-6 md:px-12 lg:px-24 bg-white text-lush-dark relative z-30 overflow-hidden">
             <div className="max-w-7xl mx-auto relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 sm:gap-12 lg:gap-24 items-center">
 
@@ -37,17 +37,17 @@ const About = () => {
                             animate={isInView ? "visible" : "hidden"}
                         >
                             We craft <br />
-                            <span className="font-script text-lush-gold normal-case text-4xl sm:text-5xl md:text-7xl">spaces</span> that <br />
+                            <span className="font-script text-lush-red normal-case text-4xl sm:text-5xl md:text-7xl">spaces</span> that <br />
                             inspire you.
                         </motion.h3>
 
                         <motion.p
-                            className="text-base sm:text-lg text-gray-400 font-inter font-light leading-relaxed mb-8 sm:mb-10"
+                            className="text-base sm:text-lg text-gray-600 font-inter font-light leading-relaxed mb-8 sm:mb-10"
                             variants={fadeUpText}
                             initial="hidden"
                             animate={isInView ? "visible" : "hidden"}
                         >
-                            At LUSH Living, interior design is more than just decoration. It's an immersive experience designed to elevate your everyday. We merge timeless elegance with contemporary sophistication to create spaces layered in luxury.
+                            At <span className="font-cormorant">LUSH</span> <span className="font-slight">Living</span>, interior design is more than just decoration. It's an immersive experience designed to elevate your everyday. We merge timeless elegance with contemporary sophistication to create spaces <span className="font-now lowercase">layered in</span> <span className="font-beyond lowercase">luxury</span>.
                         </motion.p>
                     </div>
 
@@ -80,7 +80,7 @@ const About = () => {
                                     alt="Elegant Interior"
                                     className="w-full h-auto object-cover transform-gpu scale-100 group-hover:scale-110 transition-transform duration-[1.5s] ease-in-out"
                                 />
-                                <div className="absolute inset-0 bg-gradient-to-t from-lush-gold/30 to-transparent opacity-0 group-hover:opacity-100 mix-blend-overlay transition-opacity duration-500" />
+                                <div className="absolute inset-0 bg-gradient-to-t from-lush-dark/30 to-transparent opacity-0 group-hover:opacity-100 mix-blend-overlay transition-opacity duration-500" />
                             </div>
                         </motion.div>
                     </div>

@@ -26,7 +26,7 @@ function App() {
       <Header onMenuClick={() => setNavOpen(true)} />
       <Navbar isOpen={navOpen} onClose={() => setNavOpen(false)} />
 
-      <main className="bg-lush-dark min-h-screen">
+      <main className="bg-white min-h-screen">
         <Hero onExploreClick={() => setNavOpen(true)} />
         <About />
         <Projects />
