@@ -1,7 +1,15 @@
 import React, { useState, useEffect } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 
-const Header = ({ onMenuClick }) => {
+const navItems = [
+    { label: 'Home', href: '/' },
+    { label: 'Completed Projects', href: '/completed-projects' },
+    { label: 'About Us', href: '/about' },
+    { label: 'Contact', href: '/#contact' },
+];
+
+const Header = () => {
     const { scrollY } = useScroll();
     const [scrolled, setScrolled] = useState(false);
 
@@ -17,34 +25,40 @@ const Header = ({ onMenuClick }) => {
 
     return (
         <motion.header
-            className="fixed top-0 left-0 w-full z-50 transition-all duration-300 pointer-events-none"
+            className="fixed top-0 left-0 w-full z-50 transition-all duration-300"
             style={{
                 backgroundColor: `rgba(255, 255, 255, ${bgOpacity.get()})`,
                 backdropFilter: scrolled ? 'blur(12px)' : 'none',
-                borderBottom: `1px solid rgba(0, 0, 0, ${borderColorOpacity.get()})`
+                borderBottom: `1px solid rgba(0, 0, 0, ${borderColorOpacity.get()})`,
+                pointerEvents: 'auto'
             }}
         >
-            <div className="flex items-center justify-between px-4 sm:px-6 md:px-12 py-4 md:py-6 pointer-events-auto">
-                {/* Logo Area */}
-                <div className="flex items-center opacity-0">
-                    <img
-                        src="/lush-logo.png?v=2"
-                        alt="LUSH Logo"
-                        className="h-8 md:h-10 w-auto"
-                    />
+            <div className="relative flex items-center justify-center px-4 sm:px-6 md:px-12 py-4 md:py-6">
+                {/* Logo Area - Absolute positioned to the left */}
+                <div className="absolute left-4 sm:left-6 md:left-12 flex items-center">
+                    <Link to="/">
+                        <img
+                            src="/lush-logo.png?v=2"
+                            alt="LUSH Logo"
+                            className="h-8 md:h-10 w-auto"
+                        />
+                    </Link>
                 </div>
 
-                {/* Hamburger Button */}
-                <button
-                    onClick={onMenuClick}
-                    className="group flex items-center justify-center w-12 h-12 rounded-full border border-lush-dark/20 hover:border-lush-red/50 hover:bg-lush-red/10 transition-all duration-300 overflow-hidden"
-                    aria-label="Open menu"
-                >
-                    <div className="flex flex-col items-end gap-1.5 w-5">
-                        <span className="w-full h-[1.5px] bg-lush-dark group-hover:bg-lush-red transition-colors duration-300" />
-                        <span className="w-3/4 h-[1.5px] bg-lush-dark group-hover:w-full group-hover:bg-lush-red transition-all duration-300" />
-                    </div>
-                </button>
+                {/* Navigation Links - Centered */}
+                <nav className="flex items-center gap-4 md:gap-8 lg:gap-12">
+                    {navItems.map((item) => (
+                        <Link
+                            key={item.label}
+                            to={item.href}
+                            className="relative py-2 text-[10px] sm:text-[11px] md:text-[13px] font-inter font-light uppercase tracking-[0.1em] md:tracking-[0.2em] text-lush-dark/60 hover:text-lush-dark transition-colors duration-300 group"
+                        >
+                            {item.label}
+                            {/* Animated underline */}
+                            <span className="absolute bottom-0 left-1/2 -translate-x-1/2 w-0 h-[1px] bg-lush-red group-hover:w-full transition-all duration-500 ease-[cubic-bezier(0.76,0,0.24,1)]" />
+                        </Link>
+                    ))}
+                </nav>
             </div>
         </motion.header>
     );

@@ -1,8 +1,9 @@
 import React, { useRef } from 'react';
 import { motion, useScroll, useTransform } from 'framer-motion';
+import { Link } from 'react-router-dom';
 import MagneticButton from './MagneticButton';
 
-const Hero = ({ onExploreClick }) => {
+const Hero = () => {
     const container = useRef(null);
     const { scrollYProgress } = useScroll({
         target: container,
@@ -63,13 +64,16 @@ const Hero = ({ onExploreClick }) => {
                 </motion.div>
 
                 <motion.div
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
+                    initial={{ opacity: 0, y: 20 }}
+                    animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.8, delay: 1.6, ease: "easeOut" }}
+                    className="mt-8"
                 >
-                    <MagneticButton onClick={onExploreClick} className="text-lush-dark hover:text-white border-lush-dark/40 hover:border-lush-red">
-                        Explore Our Vision
-                    </MagneticButton>
+                    <Link to="/about">
+                        <MagneticButton className="text-lush-dark hover:text-white border-lush-dark/40 hover:border-lush-red">
+                            Explore our Vision
+                        </MagneticButton>
+                    </Link>
                 </motion.div>
             </div>
 

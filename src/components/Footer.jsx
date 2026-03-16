@@ -5,7 +5,7 @@ import { ArrowUpRight } from 'lucide-react';
 
 const Footer = () => {
     return (
-        <footer className="relative bg-white text-lush-dark pt-16 sm:pt-24 md:pt-32 pb-10 overflow-hidden z-40 border-t border-black/10">
+        <footer id="contact" className="relative bg-white text-lush-dark pt-16 sm:pt-24 md:pt-32 pb-10 overflow-hidden z-40 border-t border-black/10">
             <div className="px-4 sm:px-6 md:px-12 lg:px-24 mx-auto max-w-[100rem]">
 
                 {/* Call to Action Grid */}

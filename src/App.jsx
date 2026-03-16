@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import CustomCursor from './components/CustomCursor';
 import PageLoader from './components/PageLoader';
 import Header from './components/Header';
-import Navbar from './components/Navbar';
 import Footer from './components/Footer';
 import Home from './components/Home';
 import ArchitecturePage from './components/ArchitecturePage';
@@ -11,6 +10,8 @@ import ProjectDetailsPage from './components/ProjectDetailsPage';
 import InteriorPage from './components/InteriorPage';
 import LandscapePage from './components/LandscapePage';
 import ManagementPage from './components/ManagementPage';
+import CompletedProjectsPage from './components/CompletedProjectsPage';
+import AboutPage from './components/AboutPage';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -23,7 +24,6 @@ const ScrollToTop = () => {
 
 function AppContent() {
   const [loading, setLoading] = useState(true);
-  const [navOpen, setNavOpen] = useState(false);
 
   return (
     <>
@@ -32,17 +32,18 @@ function AppContent() {
 
       {loading && <PageLoader onComplete={() => setLoading(false)} />}
 
-      <Header onMenuClick={() => setNavOpen(true)} />
-      <Navbar isOpen={navOpen} onClose={() => setNavOpen(false)} />
+      <Header />
 
       <main className="bg-white min-h-screen">
         <Routes>
-          <Route path="/" element={<Home setNavOpen={setNavOpen} />} />
+          <Route path="/" element={<Home />} />
           <Route path="/architecture" element={<ArchitecturePage />} />
           <Route path="/architecture/:projectId" element={<ProjectDetailsPage />} />
+          <Route path="/completed-projects" element={<CompletedProjectsPage />} />
           <Route path="/interior" element={<InteriorPage />} />
           <Route path="/landscape" element={<LandscapePage />} />
           <Route path="/management" element={<ManagementPage />} />
+          <Route path="/about" element={<AboutPage />} />
         </Routes>
         <Footer />
       </main>
