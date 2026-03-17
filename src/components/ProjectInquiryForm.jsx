@@ -13,7 +13,9 @@ const ProjectInquiryForm = ({ isOpen, onClose }) => {
         
         try {
             const data = Object.fromEntries(formData.entries());
-            const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5001";
+            // In development, use VITE_API_URL or localhost:5001. In production (Vercel), use relative path.
+            const isProd = import.meta.env.PROD;
+            const apiUrl = isProd ? "" : (import.meta.env.VITE_API_URL || "http://localhost:5001");
             const response = await fetch(`${apiUrl}/api/inquiry`, {
                 method: "POST",
                 body: JSON.stringify(data),
