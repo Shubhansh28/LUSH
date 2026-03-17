@@ -12,10 +12,12 @@ const ProjectInquiryForm = ({ isOpen, onClose }) => {
         const formData = new FormData(e.target);
         
         try {
-            const response = await fetch("https://formspree.io/f/lushlivingindia@gmail.com", {
+            const data = Object.fromEntries(formData.entries());
+            const response = await fetch("http://localhost:5001/api/inquiry", {
                 method: "POST",
-                body: formData,
+                body: JSON.stringify(data),
                 headers: {
+                    'Content-Type': 'application/json',
                     'Accept': 'application/json'
                 }
             });
@@ -104,7 +106,7 @@ const ProjectInquiryForm = ({ isOpen, onClose }) => {
                                                         required
                                                         name="email"
                                                         type="email"
-                                                        placeholder="hello@example.com"
+                                                        placeholder="lushlivingindia@gmail.com"
                                                         className="w-full border-b border-gray-200 py-2 focus:border-lush-red outline-none transition-colors font-inter font-light"
                                                     />
                                                 </div>
