@@ -13,7 +13,8 @@ const ProjectInquiryForm = ({ isOpen, onClose }) => {
         
         try {
             const data = Object.fromEntries(formData.entries());
-            const response = await fetch("http://localhost:5001/api/inquiry", {
+            const apiUrl = import.meta.env.VITE_API_URL || "http://localhost:5001";
+            const response = await fetch(`${apiUrl}/api/inquiry`, {
                 method: "POST",
                 body: JSON.stringify(data),
                 headers: {
