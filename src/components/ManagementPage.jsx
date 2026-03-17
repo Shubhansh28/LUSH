@@ -6,7 +6,7 @@ const managementProjects = [
         id: 1,
         title: 'The Pinnacle Build',
         category: 'Commercial Development',
-        image: 'https://images.unsplash.com/photo-1541888081622-4a004b12fe69?q=80&w=1200',
+        image: 'https://images.unsplash.com/photo-1541976590-713941681591?q=80&w=1200',
     },
     {
         id: 2,
@@ -18,7 +18,7 @@ const managementProjects = [
         id: 3,
         title: 'Skyline Integration',
         category: 'High-Rise Construction',
-        image: 'https://images.unsplash.com/photo-1504307651254-35680f356dbd?q=80&w=1200',
+        image: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=1200',
     },
     {
         id: 4,

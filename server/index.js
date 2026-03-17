@@ -44,7 +44,7 @@ app.post('/api/inquiry', async (req, res) => {
 
     const mailOptions = {
         from: `"${name}" <${process.env.SMTP_USER}>`,
-        to: process.env.RECIPIENT_EMAIL || 'ashmit.sahu181207@gmail.com',
+        to: process.env.RECIPIENT_EMAIL || 'lushlivingindia@gmail.com',
         replyTo: email,
         subject: `New Project Inquiry from ${name}`,
         text: `
