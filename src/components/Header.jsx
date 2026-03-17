@@ -9,7 +9,7 @@ const navItems = [
     { label: 'Contact', href: '/#contact' },
 ];
 
-const Header = () => {
+const Header = ({ onStartProject }) => {
     const { scrollY } = useScroll();
     const [scrolled, setScrolled] = useState(false);
 
@@ -34,13 +34,13 @@ const Header = () => {
             }}
         >
             <div className="relative flex items-center justify-center px-4 sm:px-6 md:px-12 py-4 md:py-6">
-                {/* Logo Area - Absolute positioned to the left */}
-                <div className="absolute left-4 sm:left-6 md:left-12 flex items-center">
-                    <Link to="/">
+                {/* Logo Area - Absolute positioned to the extreme left */}
+                <div className="absolute left-2 sm:left-4 md:left-6 flex items-center top-2 md:top-4 z-[60]">
+                    <Link to="/" className="block">
                         <img
-                            src="/lush-logo.png?v=2"
+                            src="/lush-new-logo.png"
                             alt="LUSH Logo"
-                            className="h-8 md:h-10 w-auto"
+                            className="h-12 md:h-16 w-auto object-contain"
                         />
                     </Link>
                 </div>
@@ -59,6 +59,16 @@ const Header = () => {
                         </Link>
                     ))}
                 </nav>
+
+                {/* Right side CTA */}
+                <div className="absolute right-4 sm:right-6 md:right-12 hidden lg:flex items-center">
+                    <button 
+                        onClick={onStartProject}
+                        className="px-6 py-2 border border-lush-dark text-[10px] uppercase tracking-widest font-bold hover:bg-lush-dark hover:text-white transition-all duration-300"
+                    >
+                        Start a Project
+                    </button>
+                </div>
             </div>
         </motion.header>
     );

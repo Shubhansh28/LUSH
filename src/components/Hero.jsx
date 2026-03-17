@@ -20,13 +20,6 @@ const Hero = () => {
 
             {/* Hero Content */}
             <div className="relative z-20 flex flex-col items-center justify-center w-full px-4">
-                {/* Watermark Logo */}
-                <img
-                    src="/lush-logo.png?v=2"
-                    alt=""
-                    className="absolute top-2 left-2 md:top-4 md:left-4 h-12 sm:h-16 md:h-28 w-auto opacity-50 pointer-events-none select-none"
-                    aria-hidden="true"
-                />
                 <motion.div
                     initial={{ opacity: 0, y: 100 }}
                     animate={{ opacity: 1, y: 0 }}

@@ -3,7 +3,7 @@ import { motion } from 'framer-motion';
 import MagneticButton from './MagneticButton';
 import { ArrowUpRight } from 'lucide-react';
 
-const Footer = () => {
+const Footer = ({ onStartProject }) => {
     return (
         <footer id="contact" className="relative bg-white text-lush-dark pt-16 sm:pt-24 md:pt-32 pb-10 overflow-hidden z-40 border-t border-black/10">
             <div className="px-4 sm:px-6 md:px-12 lg:px-24 mx-auto max-w-[100rem]">
@@ -17,23 +17,25 @@ const Footer = () => {
                         <h2 className="font-script text-3xl sm:text-5xl md:text-7xl text-lush-red normal-case mb-6 sm:mb-8">
                             something beautiful.
                         </h2>
-                        <MagneticButton className="text-lush-dark hover:text-white border-lush-dark/40 hover:border-lush-red">
-                            Start a Project
-                        </MagneticButton>
+                        <div onClick={onStartProject}>
+                            <MagneticButton className="text-lush-dark hover:text-white border-lush-dark/40 hover:border-lush-red">
+                                Start a Project
+                            </MagneticButton>
+                        </div>
                     </div>
 
                     <div className="flex flex-col md:items-end md:text-right justify-end gap-12">
                         <div>
-                            <h4 className="text-sm text-gray-500 uppercase tracking-widest mb-4 font-inter">Location</h4>
+                            <h4 className="text-sm text-gray-500 uppercase tracking-widest mb-4 font-inter">Locations</h4>
                             <p className="text-base sm:text-xl font-inter font-light">
-                                124 Regent Street<br />
-                                London, W1B 5SA
+                                Hyderabad, Telangana<br />
+                                Bhubaneswar, Odisha
                             </p>
                         </div>
                         <div>
                             <h4 className="text-sm text-gray-500 uppercase tracking-widest mb-4 font-inter">Contact</h4>
-                            <a href="mailto:hello@lushliving.com" className="text-base sm:text-xl hover:text-lush-red transition-colors duration-300 font-inter font-light flex items-center gap-2">
-                                hello@lushliving.com <ArrowUpRight size={20} />
+                            <a href="mailto:lushlivingindia@gmail.com" className="text-base sm:text-xl hover:text-lush-red transition-colors duration-300 font-inter font-light flex items-center gap-2">
+                                lushlivingindia@gmail.com <ArrowUpRight size={20} />
                             </a>
                         </div>
                     </div>

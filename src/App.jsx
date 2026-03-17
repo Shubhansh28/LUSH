@@ -12,6 +12,7 @@ import LandscapePage from './components/LandscapePage';
 import ManagementPage from './components/ManagementPage';
 import CompletedProjectsPage from './components/CompletedProjectsPage';
 import AboutPage from './components/AboutPage';
+import ProjectInquiryForm from './components/ProjectInquiryForm';
 
 // Scroll to top on route change
 const ScrollToTop = () => {
@@ -24,6 +25,7 @@ const ScrollToTop = () => {
 
 function AppContent() {
   const [loading, setLoading] = useState(true);
+  const [isInquiryModalOpen, setIsInquiryModalOpen] = useState(false);
 
   return (
     <>
@@ -32,7 +34,12 @@ function AppContent() {
 
       {loading && <PageLoader onComplete={() => setLoading(false)} />}
 
-      <Header />
+      <Header onStartProject={() => setIsInquiryModalOpen(true)} />
+
+      <ProjectInquiryForm 
+        isOpen={isInquiryModalOpen} 
+        onClose={() => setIsInquiryModalOpen(false)} 
+      />
 
       <main className="bg-white min-h-screen">
         <Routes>
@@ -45,7 +52,7 @@ function AppContent() {
           <Route path="/management" element={<ManagementPage />} />
           <Route path="/about" element={<AboutPage />} />
         </Routes>
-        <Footer />
+        <Footer onStartProject={() => setIsInquiryModalOpen(true)} />
       </main>
     </>
   );
