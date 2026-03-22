@@ -2,7 +2,9 @@ import 'dotenv/config'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import nodemailer from 'nodemailer'
+import { createRequire } from 'module'
+const require = createRequire(import.meta.url)
+const nodemailer = require('nodemailer')
 
 function apiPlugin() {
   return {
