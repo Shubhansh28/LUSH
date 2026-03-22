@@ -2,7 +2,7 @@ import 'dotenv/config'
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react'
 import tailwindcss from '@tailwindcss/vite'
-import { Resend } from 'resend'
+import nodemailer from 'nodemailer'
 
 function apiPlugin() {
   return {
@@ -30,7 +30,7 @@ function apiPlugin() {
         req.on('data', chunk => { body += chunk; });
         req.on('end', async () => {
           try {
-            const { name, email, phone, address, 'project-type': projectType } = JSON.parse(body);
+            const { name, email, phone, address, comments, 'project-type': projectType } = JSON.parse(body);
 
             if (!name || !email) {
               res.writeHead(400);
@@ -38,9 +38,18 @@ function apiPlugin() {
               return;
             }
 
-            const resend = new Resend(process.env.RESEND_API_KEY);
-            await resend.emails.send({
-              from: process.env.RESEND_FROM_EMAIL || 'LUSH Living <onboarding@resend.dev>',
+            const transporter = nodemailer.createTransport({
+              host: process.env.SMTP_HOST,
+              port: process.env.SMTP_PORT,
+              secure: process.env.SMTP_PORT == 465,
+              auth: {
+                user: process.env.SMTP_USER,
+                pass: process.env.SMTP_PASS,
+              },
+            });
+
+            await transporter.sendMail({
+              from: `"${name}" <${process.env.SMTP_USER}>`,
               to: process.env.RECIPIENT_EMAIL || 'lushlivingindia@gmail.com',
               replyTo: email,
               subject: `New Project Inquiry from ${name}`,
@@ -53,6 +62,7 @@ function apiPlugin() {
                     <p><strong>Phone:</strong> ${phone}</p>
                     <p><strong>Project Type:</strong> ${projectType}</p>
                     <p><strong>Address:</strong> ${address}</p>
+                    ${comments ? `<p><strong>Query / Comments:</strong> ${comments}</p>` : ''}
                   </div>
                   <p style="font-size: 12px; color: #777; margin-top: 20px;">Sent via LUSH Living Website</p>
                 </div>

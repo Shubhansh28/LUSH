@@ -6,7 +6,7 @@ const navItems = [
     { label: 'Home', href: '/' },
     { label: 'Completed Projects', href: '/completed-projects' },
     { label: 'About Us', href: '/about' },
-    { label: 'Contact', href: '/#contact' },
+    { label: 'Contact', href: '/contact' },
 ];
 
 const Header = ({ onStartProject }) => {

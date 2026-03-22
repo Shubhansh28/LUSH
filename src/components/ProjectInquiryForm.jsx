@@ -63,7 +63,7 @@ const ProjectInquiryForm = ({ isOpen, onClose }) => {
 
                         <div className="flex flex-col md:flex-row h-full">
                             {/* Left Side: Visual/Context */}
-                            <div className="hidden md:flex md:w-1/3 bg-lush-dark p-8 flex-col justify-end text-white">
+                            <div className="hidden md:flex md:w-1/3 bg-lush-red p-8 flex-col justify-end text-white">
                                 <h3 className="font-playfair text-3xl mb-4">Start Your Journey</h3>
                                 <p className="font-inter font-light text-sm opacity-60 leading-relaxed">
                                     Let us help you bring your vision to life. Share a few details about your project, and our design experts will reach out.
@@ -149,6 +149,16 @@ const ProjectInquiryForm = ({ isOpen, onClose }) => {
                                                     placeholder="124 Regent Street, London"
                                                     className="w-full border-b border-gray-200 py-2 focus:border-lush-red outline-none transition-colors font-inter font-light"
                                                 />
+                                            </div>
+
+                                            <div className="space-y-2 pt-2">
+                                                <label className="text-[10px] uppercase tracking-widest text-gray-400 font-inter font-bold">Query / Comments</label>
+                                                <textarea 
+                                                    name="comments"
+                                                    rows="3"
+                                                    placeholder="Tell us more about your project..."
+                                                    className="w-full border-b border-gray-200 py-2 focus:border-lush-red outline-none transition-colors font-inter font-light resize-none"
+                                                ></textarea>
                                             </div>
 
                                             <div className="pt-6">
